@@ -16,6 +16,8 @@
         owner: "{{ user }}"
         group: "{{ user }}"
     - name: Font cache update
-      command: fc-cache -fv
+      ansible.builtin.command: fc-cache -fv
+      register: cmd_result # <- Registers the command output.
+      changed_when: my_cmd_result.rc != 0 # <- Uses the return code to define when the task has changed.
       when: ansible_system |lower == "linux"
       
