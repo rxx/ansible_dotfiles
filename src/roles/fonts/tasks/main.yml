@@ -16,8 +16,6 @@
         owner: "{{ user }}"
         group: "{{ user }}"
     - name: Font cache update
-      action: command fc-cache -fv
+      command: fc-cache -fv
       when: ansible_system |lower == "linux"
       
-        
- 
