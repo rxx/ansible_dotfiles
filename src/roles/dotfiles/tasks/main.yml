@@ -1,0 +1,11 @@
+- name: Get chezmoi install
+  get_url:
+    url: get.chezmoi.io
+    dest: /tmp/chezmoi
+    mode: '0755'
+- name: Initialize Chezmoi
+  ansible.builtin.command: "/tmp/chezmoi init --apply rxx"
+    environment: 
+      HOME: "/home/{{ user }}"
+    args:
+      executable: /bin/bash
