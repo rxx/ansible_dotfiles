@@ -1,0 +1,17 @@
+- name: Setup dev machine
+  hosts: localhost
+  connection: local
+  gather_facts: yes
+  vars_files:
+    - "vars/common.yml"
+    - [ "vars/{{ ansible_facts['ansible_distribution'] }}.yml"]
+  roles:
+    - common
+    - fedora
+      when: ansible_distribution == "Fedora"
+    - macos
+      when: ansible_distribution == "MacOSX"
+        
+    - name: Clone dotfiles
+      shell:
+        sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply rxx

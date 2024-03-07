@@ -1,0 +1,18 @@
+# Install Nerd font
+- name: Install Jetbrains Nerd Font
+  block:
+    - name: Create Directory
+      ansible.builtin.file:
+        path: "{{ font_dir }}"
+        state: directory
+        mode: "0755"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+    - name: Download
+      ansible.builtin.unarchive:
+        src: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+        dest: "{{ font_dir }}"
+        remote_src: true
+        owner: "{{ user }}"
+        group: "{{ user }}"
+ 

@@ -1,0 +1,5 @@
+- name: Install packages Fedora
+  become: yes
+  ansible.builtin.package:
+    name: " {{ package_apps }}"
+    state: present

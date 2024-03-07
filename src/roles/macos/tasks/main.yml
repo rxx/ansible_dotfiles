@@ -1,0 +1,5 @@
+- name: Install packages MacOS
+  become: yes
+  community.general.homebew:
+    name: " {{ package_apps }}"
+    state: present
