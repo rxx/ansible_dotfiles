@@ -1,6 +1,6 @@
 - name: Install packages MacOS
   become: yes
-  community.general.homebew:
+  community.general.homebrew:
     name: " {{ package_apps }}"
     state: present
     update_homebrew: true
