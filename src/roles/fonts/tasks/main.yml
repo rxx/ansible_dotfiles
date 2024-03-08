@@ -1,4 +1,5 @@
 - name: Check Jetbrains Nerd Font installed
+  become: false
   vars:
     dir: "{{ fonts_dir }}/JetBrainsMonoNerd"
   ansible.builtin.stat:
@@ -8,6 +9,7 @@
 
 - name: Install Jetbrains Nerd Font
   when: not font_dir.stat.exists
+  become: false
   block:
     - name: Create Directory
       ansible.builtin.file:

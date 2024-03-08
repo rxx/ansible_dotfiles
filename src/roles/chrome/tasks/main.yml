@@ -1,4 +1,5 @@
 - name: Install Google Chrome
+  become: true
   block:
     - name: Import google chrome RPM GPG key
       ansible.builtin.rpm_key:

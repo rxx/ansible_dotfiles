@@ -1,7 +1,7 @@
 - name: Setup dev machine
   hosts: localhost
   connection: local
-  gather_facts: false
+  gather_facts: true
   vars_files: "vars.yml"
   roles:
     - fonts
