@@ -2,19 +2,27 @@ home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
 fonts_dir: "{{ home_dir }}/.local/share/fonts"
 
 package_apps:
+  # Terminal Tools
   - git
   - fish
   # - starship
+  - kitty
   - bat
   - fzf
   - zoxide
   - lsd
   - sd
   - procs
-  # - krusander
-  - ranger
-  - python
   - curl
+  - python
+  - wl-clipboard
+  # Apps
+  - krusader
+  - ranger
+  - keepassxc
+  - neovim
+
+
 
 flatpack_apps:
   - com.google.Chrome

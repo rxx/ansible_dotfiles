@@ -1,5 +1,5 @@
 - name: Check chezmoi installed
-  shell: command -v chezmoi >/dev/null 2>&1
+  ansible.builtin.shell: command -v chezmoi >/dev/null 2>&1
   register: chezmoi_exists
   ignore_errors: true
   changed_when: chezmoi_exists.rc != 0
@@ -7,11 +7,11 @@
 - name: Setup chezmoi and dotfiles
   when: chezmoi_exists.rc == 1
   block:
-  - name: Install script to /tmp
-    get_url:
-      url: https://get.chezmoi.io
-      dest: /tmp/chezmoi
-      mode: '0755'
+    - name: Install script to /tmp
+      ansible.builtin.get_url:
+        url: https://get.chezmoi.io
+        dest: /tmp/chezmoi
+        mode: '0755'
 
   - name: Initialize Dotfiles
     ansible.builtin.shell: "/tmp/chezmoi init --apply rxx"
