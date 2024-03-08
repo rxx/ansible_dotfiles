@@ -22,9 +22,7 @@ package_apps:
   - keepassxc
   - neovim
 
-
-
-flatpack_apps:
+flatpak_apps:
   - com.google.Chrome
   - com.visualstudio.code
   - org.videolan.VLC
