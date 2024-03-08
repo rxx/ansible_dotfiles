@@ -4,6 +4,7 @@
   gather_facts: false
   vars_files: "vars.yml"
   roles:
-    - role: fonts
-    - role: dotfiles
-    - role: packages
+    - fonts
+    - dotfiles
+    - packages
+    - flatpacks

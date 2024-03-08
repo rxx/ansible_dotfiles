@@ -1,3 +1,9 @@
+- name: Install all updates
+  become: true
+  ansible.builtin.package:
+    name: '*'
+    update_cache: yes
+    state: latest
 - name: Install packages
   become: true
   ansible.builtin.package:
