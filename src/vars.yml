@@ -4,14 +4,14 @@ fonts_dir: "{{ home_dir }}/.local/share/fonts"
 package_apps:
   - git
   - fish
-  - starship
+  # - starship
   - bat
   - fzf
   - zoxide
   - lsd
   - sd
   - procs
-  - krusander
+  # - krusander
   - ranger
   - python
   - curl

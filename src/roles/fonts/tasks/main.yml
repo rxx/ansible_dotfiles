@@ -1,18 +1,25 @@
-# Install Nerd font
+- name: Check Jetbrains Nerd Font installed
+  vars:
+    dir: "{{ fonts_dir }}/JetBrainsMonoNerd"
+  ansible.builtin.stat:
+    path: "{{ dir }}"
+  register: font_dir
+  ignore_errors: true
+
 - name: Install Jetbrains Nerd Font
+  when: not font_dir.stat.exists
   block:
     - name: Create Directory
       ansible.builtin.file:
-        path: "{{ fonts_dir }}/JetBrainsMonoNerd"
+        path: "{{ dir }}"
         state: directory
         mode: "0755"
     - name: Download
       ansible.builtin.unarchive:
         src: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-        dest: "{{ fonts_dir }}/JetBrainsMonoNerd"
+        dest: "{{ dir }}"
         remote_src: true
     - name: Font cache update
       ansible.builtin.command: fc-cache -fv
       register: cmd_result
       changed_when: cmd_result.rc != 0
-
