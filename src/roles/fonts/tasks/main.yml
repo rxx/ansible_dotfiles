@@ -3,21 +3,16 @@
   block:
     - name: Create Directory
       ansible.builtin.file:
-        path: "{{ font_dir }}"
+        path: "{{ fonts_dir }}/JetBrainsMonoNerd"
         state: directory
         mode: "0755"
-        owner: "{{ user }}"
-        group: "{{ user }}"
     - name: Download
       ansible.builtin.unarchive:
         src: https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
-        dest: "{{ font_dir }}"
+        dest: "{{ fonts_dir }}/JetBrainsMonoNerd"
         remote_src: true
-        owner: "{{ user }}"
-        group: "{{ user }}"
     - name: Font cache update
       ansible.builtin.command: fc-cache -fv
-      register: cmd_result # <- Registers the command output.
-      changed_when: my_cmd_result.rc != 0 # <- Uses the return code to define when the task has changed.
-      when: ansible_system |lower == "linux"
-      
+      register: cmd_result
+      changed_when: cmd_result.rc != 0
+

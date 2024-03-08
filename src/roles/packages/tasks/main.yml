@@ -1,6 +1,6 @@
 - name: Install packages Fedora
   become: true
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name: " {{ package_apps }}"
     state: present
-    
+    autoremove: yes

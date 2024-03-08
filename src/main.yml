@@ -2,11 +2,8 @@
   hosts: localhost
   connection: local
   gather_facts: true
+  vars_files: "vars.yml"
   roles:
-    - role: common
+    # - role: packages
     - role: fonts
     - role: dotfiles
-    - role: fedora
-      when: ansible_distribution | lower == "fedora"
-    - role: macos
-      when: ansible_system | lower == "darwin"

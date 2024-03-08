@@ -1,0 +1,18 @@
+home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+fonts_dir: "{{ home_dir }}/.local/share/fonts"
+
+package_apps:
+  - git
+  - fish
+  - starship
+  - bat
+  - fzf
+  - zoxide
+  - lsd
+  - sd
+  - procs
+  - krusander
+  - ranger
+  - python
+  - curl
+
