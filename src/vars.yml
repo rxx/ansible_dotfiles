@@ -15,12 +15,9 @@ package_apps:
   - ranger
   - python
   - curl
+  - code
 
 flatpack_apps:
-  - com.google.Chrome
-  - com.visualstudio.code
-  - org.videolan.VLC
   - com.discordapp.Discord
-  - org.telegram.desktop
-  - com.github.tchx84.Flatseal
   - us.zoom.Zoom
+  - org.telegram.Desktop
