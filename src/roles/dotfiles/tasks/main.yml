@@ -12,11 +12,10 @@
         url: https://get.chezmoi.io
         dest: /tmp/chezmoi
         mode: '0755'
-
-  - name: Initialize Dotfiles
-    ansible.builtin.shell: "/tmp/chezmoi init --apply rxx"
-    args:
-      executable: /bin/bash
-      chdir: "{{ home_dir }}"
-      register: chezmoi_init
-      changed_when: chezmoi_init.rc != 0
+    - name: Initialize Dotfiles
+      ansible.builtin.shell: "/tmp/chezmoi init --apply rxx"
+      args:
+        executable: /bin/bash
+        chdir: "{{ home_dir }}"
+        register: chezmoi_init
+        changed_when: chezmoi_init.rc != 0
