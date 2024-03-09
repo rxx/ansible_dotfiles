@@ -1,0 +1,12 @@
+- name: Check starship installed
+  ansible.builtin.shell: command -v starship >/dev/null 2>&1
+  register: starship_exists
+  ignore_errors: true
+  changed_when: starship_exists.rc != 0
+
+- name: Install Starship
+  when: starship_exists.rc == 1
+  ansible.builtin.shell: curl -sS https://starship.rs/install.sh | sh
+  args:
+    executable: /bin/bash
+    

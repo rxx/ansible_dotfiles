@@ -1,5 +1,6 @@
 home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
 fonts_dir: "{{ home_dir }}/.local/share/fonts"
+user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 
 package_apps:
   # Terminal Tools
@@ -7,7 +8,6 @@ package_apps:
   - fish
   - kitty
   - bat
-  - fd
   - fzf
   - zoxide
   - lsd
@@ -16,6 +16,7 @@ package_apps:
   - curl
   - code
   - python
+  - ruby
   - wl-clipboard
   # Apps
   - krusader
@@ -23,10 +24,9 @@ package_apps:
   - keepassxc
   - neovim
 
-brew_apps:
-  - starship
-
 flatpak_apps:
   - com.discordapp.Discord
   - org.telegram.desktop
   - us.zoom.Zoom
+  - com.logseq.Logseq
+  - md.obsidian.Obsidian

@@ -1,0 +1,22 @@
+- name: Install docker and Docker Compose
+  become: true
+  block:
+    - name: Install
+      ansible.builtin.dnf:
+        name:
+          - docker
+          - docker-compose
+        state: latest
+
+    - name: Create docker group
+      ansible.builtin.group:
+        name: docker
+        state: present
+        system: true
+
+- name: Append the user to docker group
+  become: true
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: true

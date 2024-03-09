@@ -1,0 +1,11 @@
+- name: Check Rustup installed
+  ansible.builtin.shell: command -v rustup >/dev/null 2>&1
+  register: rustup_exists
+  ignore_errors: true
+  changed_when: rustup_exists.rc != 0
+
+- name: Install Rustup
+  when: rustup_exists.rc == 1
+  ansible.builtin.shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -y
+  args:
+    executable: /bin/bash

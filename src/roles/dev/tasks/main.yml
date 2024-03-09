@@ -1,6 +1,0 @@
-- name: Install dev tools
-  ansible.builtin.include_tasks:
-    file: "{{ item }}"
-  loop:
-    - docker.yml
-    - mise.yml
