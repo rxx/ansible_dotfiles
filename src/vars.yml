@@ -23,8 +23,15 @@ package_apps:
   - ranger
   - keepassxc
   - neovim
-  # Dev debs
+  # Ruby Deps
   - libffi-devel
+  - autoconf
+  - automake
+  - gcc-c++
+  - libtool     
+  - libyaml-devel 
+  - readline-devel 
+  - sqlite-devel
 
 flatpak_apps:
   - com.discordapp.Discord
