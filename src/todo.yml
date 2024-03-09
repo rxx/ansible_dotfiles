@@ -64,16 +64,9 @@
   when: local_user_passwordless_
 
 - Configure tools:
-    - bat - cat
-    - fzf - with fish
-    - zoxide - cd
-    - lsd - ls
-    - sd - check docs
-    - procs - check docs
     - neovim - add min config
     - Configure kitty
     - Learn kitty commands
     - Configure starship
     - Install rust, python, node, ruby local
-    - Add fish aliases
     - Add fish plugins

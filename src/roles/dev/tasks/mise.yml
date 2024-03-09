@@ -1,0 +1,5 @@
+- name: Install Mise
+  ansible.builtin.get_url:
+    url: https://mise.jdx.dev/mise-latest-linux-x64
+    dest: "{{ home_dir }}/bin/mise"
+    mode: '0755'

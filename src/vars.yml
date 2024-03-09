@@ -5,9 +5,9 @@ package_apps:
   # Terminal Tools
   - git
   - fish
-  # - starship
   - kitty
   - bat
+  - fd
   - fzf
   - zoxide
   - lsd
@@ -22,6 +22,9 @@ package_apps:
   - ranger
   - keepassxc
   - neovim
+
+brew_apps:
+  - starship
 
 flatpak_apps:
   - com.discordapp.Discord

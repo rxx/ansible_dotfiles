@@ -42,4 +42,4 @@
         name: "{{ package_apps }}"
         state: present
         allowerasing: true
-        
+    - ansible.builtin.include_tasks: brew.yml

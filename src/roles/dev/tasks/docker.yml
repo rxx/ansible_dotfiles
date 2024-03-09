@@ -1,5 +1,5 @@
 - name: Install docker
-  dnf:
+  ansible.builtin.dnf:
     name:
       - docker
       - docker-compose
@@ -7,14 +7,14 @@
   become: true
 
 - name: Create docker group
-  group:
+  ansible.builtin.group:
     name: docker
     state: present
     system: true
   become: true
 
 - name: Append the user to docker group
-  user:
+  ansible.builtin.user:
     name: "{{ ansible_user_id }}"
     groups: docker
     append: true
