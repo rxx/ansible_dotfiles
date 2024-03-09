@@ -23,6 +23,8 @@ package_apps:
   - ranger
   - keepassxc
   - neovim
+  # Dev debs
+  - libffi-devel
 
 flatpak_apps:
   - com.discordapp.Discord
