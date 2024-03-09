@@ -1,0 +1,8 @@
+# Installing [Fisher](https://github.com/jorgebucaran/fisher)
+- name: Install fisher
+  become: false
+  ansible.builtin.shell: curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+  args:
+    executable: /bin/fish
+
+  

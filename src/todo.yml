@@ -11,27 +11,27 @@
     executable: /bin/fish
     
 - name: Check for Google Chrome repo
-      stat: path=/etc/yum.repos.d/google-chrome.repo
-      register: chrome_installed
+  stat: path=/etc/yum.repos.d/google-chrome.repo
+  register: chrome_installed
 
-    - name: Install Google Chrome repo
-      dnf:
-        name: 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm'
-        state: present
-      when: not chrome_installed.stat.exists
+- name: Install Google Chrome repo
+  dnf:
+    name: 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm'
+    state: present
+  when: not chrome_installed.stat.exists
       
 - name: Check for vscode repo
-      stat: path=/etc/yum.repos.d/vscode.repo
-      register: fedora_vscode_installed
+  stat: path=/etc/yum.repos.d/vscode.repo
+  register: fedora_vscode_installed
       
 - name: Check for RPM Fusion Free repo
-      stat: path=/etc/yum.repos.d/rpmfusion-free.repo
-      register: fedora_rpm_fusion_free_installed
+  stat: path=/etc/yum.repos.d/rpmfusion-free.repo
+  register: fedora_rpm_fusion_free_installed
 
-    - name: Check for RPM Fusion Nonfree repo
-      stat: path=/etc/yum.repos.d/rpmfusion-nonfree.repo
-      register: fedora_rpm_fusion_nonfree_installed
-      
+- name: Check for RPM Fusion Nonfree repo
+  stat: path=/etc/yum.repos.d/rpmfusion-nonfree.repo
+  register: fedora_rpm_fusion_nonfree_installed
+  
 # when: not fedora_rpm_fusion_free_installed.stat.exists
 
 - name: Set fs.inotify.max_user_watches to 524288
@@ -63,17 +63,17 @@
     validate: visudo -cf %s
   when: local_user_passwordless_
 
-Configure tools:
-  - bat - cat
-  - fzf - with fish
-  - zoxide - cd
-  - lsd - ls
-  - sd - check docs
-  - procs - check docs
-  - neovim - add min config
-  - Configure kitty
-  - Learn kitty commands
-  - Configure starship
-  - Install rust, python, node, ruby local
-  - Add fish aliases
-  - Add fish plugins
+- Configure tools:
+    - bat - cat
+    - fzf - with fish
+    - zoxide - cd
+    - lsd - ls
+    - sd - check docs
+    - procs - check docs
+    - neovim - add min config
+    - Configure kitty
+    - Learn kitty commands
+    - Configure starship
+    - Install rust, python, node, ruby local
+    - Add fish aliases
+    - Add fish plugins
