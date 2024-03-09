@@ -19,5 +19,3 @@
       args:
         executable: /bin/bash
         chdir: "{{ home_dir }}"
-        register: chezmoi_init
-        changed_when: chezmoi_init.rc != 0

@@ -6,7 +6,7 @@
 
 - name: Install Starship
   when: starship_exists.rc == 1
-  ansible.builtin.shell: curl -sS https://starship.rs/install.sh | sh
+  ansible.builtin.shell: curl -sS https://starship.rs/install.sh | sh -s -- -y
   args:
     executable: /bin/bash
     

@@ -1,5 +1,14 @@
+- name: Check Mise installed
+  become: false
+  vars:
+    dir: "{{ home_dir }}/bin/mise"
+  ansible.builtin.stat:
+    path: "{{ dir }}"
+  register: mise_dir
+
 - name: Install Mise
+  when: not mise_dir.stat.exists
   ansible.builtin.get_url:
     url: https://mise.jdx.dev/mise-latest-linux-x64
-    dest: "{{ home_dir }}/bin/mise"
+    dest: "{{ dir }}"
     mode: '0755'
