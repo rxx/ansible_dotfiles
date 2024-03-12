@@ -1,0 +1,11 @@
+- name: Enable LazyGit repo
+  become: true
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: atim/lazygit
+- name: Install LazyGit
+  become: true
+  ansible.builtin.dnf:
+    name: lazygit
+    state: present

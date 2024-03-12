@@ -18,11 +18,13 @@ package_apps:
   - python
   - ruby
   - wl-clipboard
+  - ripgrep
   # Apps
   - krusader
   - ranger
   - keepassxc
   - neovim
+  - bismuth
   # Ruby Deps
   - libffi-devel
   - autoconf
