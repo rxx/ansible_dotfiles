@@ -3,9 +3,11 @@
     file: "{{ item }}"
   loop:
     - add_repo.yml
-    - lazygit.yml
     - install.yml
     - docker.yml
     - mise.yml
     - starship.yml
     - rustup.yml
+    - lazygit.yml
+    - bottom.yml
+    - go_disk_usage.yml

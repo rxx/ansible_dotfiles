@@ -1,0 +1,11 @@
+- name: Enable Bottom repo
+  become: true
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: atim/bottom
+- name: Install Bottom
+  become: true
+  ansible.builtin.dnf:
+    name: bottom
+    state: present
