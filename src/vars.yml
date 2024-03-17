@@ -19,6 +19,7 @@ package_apps:
   - ruby
   - wl-clipboard
   - ripgrep
+  - ShellCheck
   # Apps
   - krusader
   - ranger
