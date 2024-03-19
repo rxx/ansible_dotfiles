@@ -1,13 +1,13 @@
 - name: Download gdu from Github Releases
   ansible.builtin.unarchive:
     src: https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz
-    dest: "{{ home_dir }}/bin"
+    dest: "{{ bin_dir }}"
     remote_src: true
 
 - name: Rename to gdu
-  command: "mv {{ home_dir }}/gdu_linux_amd64 {{home_dir}}/gdu"
+  ansible.builtin.command: "mv {{ bin_dir }}/gdu_linux_amd64 {{ bin_dir }}/gdu"
 - name: Make executable
   ansible.builtin.file:
-    path: "{{home_dir}}/gdu"
+    path: "{{ bin_dir }}/gdu"
     state: file
     mode: "0755"

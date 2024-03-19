@@ -1,11 +1,13 @@
 home_dir: "{{ lookup('ansible.builtin.env', 'HOME') }}"
 fonts_dir: "{{ home_dir }}/.local/share/fonts"
 user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+bin_dir: "{{ home_dir }}/bin"
 
 package_apps:
   # Terminal Tools
   - git
   - fish
+  - zsh
   - kitty
   - bat
   - fzf
@@ -16,7 +18,6 @@ package_apps:
   - curl
   - code
   - python
-  - ruby
   - wl-clipboard
   - ripgrep
   - ShellCheck
@@ -24,17 +25,15 @@ package_apps:
   - krusader
   - ranger
   - keepassxc
-  - neovim
-  - bismuth
   - firefox
   # Ruby Deps
   - libffi-devel
   - autoconf
   - automake
   - gcc-c++
-  - libtool     
-  - libyaml-devel 
-  - readline-devel 
+  - libtool
+  - libyaml-devel
+  - readline-devel
   - sqlite-devel
 
 flatpak_apps:

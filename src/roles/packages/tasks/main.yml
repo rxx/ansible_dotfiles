@@ -10,4 +10,6 @@
     - rustup.yml
     - lazygit.yml
     - bottom.yml
-    - go_disk_usage.yml
+    # - go_disk_usage.yml
+    - zsh.yml
+    - nvim.yml

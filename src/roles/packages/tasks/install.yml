@@ -1,10 +1,10 @@
 - name: Install all updates
   become: true
   ansible.builtin.dnf:
-    name: '*'
-    update_cache: yes
+    name: "*"
+    update_cache: true
     state: latest
-        
+
 - name: Install packages
   become: true
   ansible.builtin.dnf:
@@ -15,5 +15,5 @@
 - name: install the 'Development tools' package group
   become: true
   ansible.builtin.dnf:
-    name: '@Development tools'
+    name: "@Development tools"
     state: latest

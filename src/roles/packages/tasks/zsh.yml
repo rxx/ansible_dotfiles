@@ -1,0 +1,5 @@
+- name: Set zsh shell default
+  become: true
+  ansible.builtin.shell: chsh -s $(which zsh)
+  args:
+    executable: /bin/zsh

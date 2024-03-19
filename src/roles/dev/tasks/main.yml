@@ -1,0 +1,7 @@
+- name: Set fs.inotify.max_user_watches to 524288
+  sysctl:
+    name: fs.inotify.max_user_watches
+    value: "524288"
+    sysctl_set: true
+    state: present
+    reload: yes

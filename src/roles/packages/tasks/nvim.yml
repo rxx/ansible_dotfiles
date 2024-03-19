@@ -1,0 +1,13 @@
+- name: Enable NeoVim Nightly repo
+  become: true
+  community.general.copr:
+    host: copr.fedorainfracloud.org
+    state: enabled
+    name: agriffis/neovim-nightly
+- name: Install Neovim
+  become: true
+  ansible.builtin.dnf:
+    name:
+      - neovim
+      - python3-neovim
+    state: present
